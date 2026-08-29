@@ -1,9 +1,8 @@
-// Package populate fills reflect values with non-zero samples, for the
-// field-coverage gates that walk a struct's fields and require each one to be
-// visible to the code under test (the allOf merge's preserves-every-field
-// test, the schema diff's field-coverage test). Deriving the sample from the
-// field's type keeps the gates free of per-field value tables.
-package populate
+// Package populatetest fills reflect values with non-zero samples for tests:
+// the field-coverage gates walk a struct's fields and require each one to be
+// visible to the code under test, and deriving the sample from the field's
+// type keeps them free of per-field value tables. Only tests import it.
+package populatetest
 
 import (
 	"reflect"
